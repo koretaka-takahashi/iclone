@@ -41,6 +41,8 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'dotenv-rails'
+  gem 'carierwave'
+  gem 'mini_magick'
 end
 
 group :development do
