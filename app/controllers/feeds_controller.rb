@@ -22,10 +22,10 @@ class FeedsController < ApplicationController
   def edit
   end    
   
-  def create # ここは流石に全く内容不明
+  def create 
     @feed = current_user.feeds.build(feed_params)
   
-    respond_to do |format|
+    respond_to do |format| # ここは流石に全く内容不明
       if @feed.save
         format.html { redirect_to @feed, notice: 'Feed was successfully created.' }
         format.json { render :show, status: :created, location: @feed }
