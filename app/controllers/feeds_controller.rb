@@ -1,18 +1,14 @@
 class FeedsController < ApplicationController
   before_action :redirect_if_not_logged_in, except: [:root, :index, :show]
+  before_action :set_feed, only: [:show, :edit, :update, :destroy]
   before_action :check_correct_user, only: [:edit, :update, :destroy]
   
-  
-  def root
-    redirect_to feeds_url
-  end
   
   def index
     @feeds = Feed.all  
   end
   
   def show
-    set_feed
   end
   
   def new
@@ -24,15 +20,10 @@ class FeedsController < ApplicationController
   
   def create 
     @feed = current_user.feeds.build(feed_params)
-  
-    respond_to do |format| # ここは流石に全く内容不明
-      if @feed.save
-        format.html { redirect_to @feed, notice: 'Feed was successfully created.' }
-        format.json { render :show, status: :created, location: @feed }
-      else
-        format.html { render :new }
-        format.json { render json: @feed.errors, status: :unprocessable_entity }
-      end
+    if @feed.save
+      redirect_to @feed, notice: 'Feed was successfully created.'
+    else
+      render :new
     end
   end
   
@@ -42,23 +33,17 @@ class FeedsController < ApplicationController
   end
   
   def update
-    respond_to do |format|
-      if @feed.update(feed_params)
-        format.html { redirect_to @feed, notice: 'Feed was successfully updated.' }
-        format.json { render :show, status: :ok, location: @feed }
-      else
-        format.html { render :edit }
-        format.json { render json: @feed.errors, status: :unprocessable_entity }
-      end
+    if @feed.update(feed_params)
+      redirect_to @feed, notice: 'Feed was successfully updated.'
+    else
+      render :edit
     end
   end
+
   
   def destroy
     @feed.destroy
-    respond_to do |format|
-      format.html { redirect_to feeds_url, notice: 'Feed was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to feeds_url, notice: 'Feed was successfully destroyed.'
   end
   
 
@@ -70,11 +55,10 @@ class FeedsController < ApplicationController
   end
   
   def set_feed
-    @feed = Feed.find_by(id:params[:id])  
+    @feed = Feed.find_by(id:params[:id])
   end
   
   def check_correct_user
-    set_feed
     if @feed.user_id != current_user.id
       flash[:notice] = "権限がありません"
       redirect_to("/feeds")

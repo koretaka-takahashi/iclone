@@ -3,12 +3,21 @@
   <head>
     <title>Iclone</title>
     <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <% if logged_in? %>
+      <%= link_to "PROFILE", user_path(current_user.id), class: "btn btn-default" %>
+      <%= link_to "LOG OUT", session_path(current_user.id), method: :delete, class: "btn btn-default" %>
+    <% else %>
+      <%= link_to "SIGN UP", new_user_path, class: "btn btn-default" %>
+      <%= link_to "LOG IN", new_session_path, class: "btn btn-default" %>
+    <% end %>
+    
     <%= yield %>
   </body>
 </html>
