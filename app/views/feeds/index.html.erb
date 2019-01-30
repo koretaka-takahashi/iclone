@@ -1,3 +1,5 @@
 <h1>Feeds一覧</h1>
 
-
+  <% @feeds.each do |feed| %>    
+    <%= image_tag feed.image.url %>
+  <% end %>

@@ -1,1 +1,8 @@
-<%= @feed.image.url %>
+<p>投稿者：<%= @feed.user.name %></p>
+<p><%= @feed.text %></p>
+<%= image_tag @feed.image.url %>
+
+<% if logged_in? && current_user.id == @feed.user_id %>
+  <%= link_to '編集', edit_feed_path, class: 'btn btn-default' %>
+  <%= link_to '削除', @feed, method: :delete, data: { confirm: '投稿を削除してよろしいですか？' }, class: 'btn btn-default' %>
+<% end %>
