@@ -5,16 +5,16 @@ class FeedsController < ApplicationController
   
   
   def index
-    # binding.pry
+    @feed = Feed.new  
     @feeds = Feed.all  
   end
   
   def show
   end
   
-  def new
-    @feed = Feed.new  
-  end
+  # def new
+  #   @feed = Feed.new  
+  # end
   
   def edit
   end    
