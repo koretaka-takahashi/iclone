@@ -5,6 +5,7 @@ class FeedsController < ApplicationController
   
   
   def index
+    # binding.pry
     @feeds = Feed.all  
   end
   

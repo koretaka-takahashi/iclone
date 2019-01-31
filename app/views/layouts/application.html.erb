@@ -10,6 +10,9 @@
   </head>
 
   <body>
+    <header>
+      <h1>iclone</h1>
+    </header>
     <% if logged_in? %>
       <%= link_to "PROFILE", user_path(current_user.id), class: "btn btn-default" %>
       <%= link_to "LOG OUT", session_path(current_user.id), method: :delete, class: "btn btn-default" %>
