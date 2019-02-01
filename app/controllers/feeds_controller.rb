@@ -20,16 +20,17 @@ class FeedsController < ApplicationController
   end    
   
   def create 
+    @feeds = Feed.all
     @feed = current_user.feeds.build(feed_params)
     if @feed.save
       redirect_to @feed, notice: 'Feed was successfully created.'
     else
-      render :new
+      render :index
     end
   end
   
   def confirm
-    @feed = currnt_user.feeds.build(feed_params)
+    @feed = current_user.feeds.build(feed_params)
     render :new if @feed.invalid?
   end
   

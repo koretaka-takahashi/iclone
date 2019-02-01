@@ -6,3 +6,5 @@
   <%= link_to '編集', edit_feed_path, class: 'btn btn-default' %>
   <%= link_to '削除', @feed, method: :delete, data: { confirm: '投稿を削除してよろしいですか？' }, class: 'btn btn-default' %>
 <% end %>
+
+<%= link_to 'トップへ戻る', feeds_path, class: "btn btn-default" %>

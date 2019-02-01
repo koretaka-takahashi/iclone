@@ -3,5 +3,9 @@ Rails.application.routes.draw do
   root to: 'feeds#index'
   resources :users
   resources :sessions, only:[:new, :create, :destroy]
-  resources :feeds
+  resources :feeds do
+      collection do
+      post :confirm
+    end
+  end    
 end

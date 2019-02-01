@@ -9,7 +9,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="background">
     <header>
       <h1>iclone</h1>
       <nav>
@@ -25,6 +25,9 @@
       </nav>
     </header>
     
+    <div>
     <%= yield %>
+    </div>
+    
   </body>
 </html>

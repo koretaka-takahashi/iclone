@@ -1,0 +1,11 @@
+<h3>以下の内容で投稿します。よろしいですか？</h3>
+
+<%= form_with(model: @feed, url: feeds_path, local: true) do |form| %>
+  <%= form.hidden_field :image_cache %>
+  <%= form.hidden_field :text %>
+
+  <p>投稿画像:<%= image_tag (@feed.image.url) %></p>
+  <p>コメント:<%= @feed.text %></p>
+  <%= form.submit "投稿する" %>
+<% end %>
+  <%= button_to "戻る", feeds_path, :method => :get  %>
