@@ -5,7 +5,11 @@ class FeedsController < ApplicationController
   
   
   def index
-    @feed = Feed.new  
+    if params[:back]
+      @feed = Feed.new(feed_params)
+    else
+      @feed = Feed.new
+    end  
     @feeds = Feed.all  
   end
   
@@ -17,26 +21,28 @@ class FeedsController < ApplicationController
   # end
   
   def edit
+    #@feed = Feed.find(feed_params)
   end    
   
   def create 
-    @feeds = Feed.all
+    # @feeds = Feed.all
     @feed = current_user.feeds.build(feed_params)
     if @feed.save
-      redirect_to @feed, notice: 'Feed was successfully created.'
+      redirect_to feeds_path, notice: 'Feed was successfully created.'
     else
       render :index
     end
   end
   
   def confirm
+    @feeds = Feed.all  
     @feed = current_user.feeds.build(feed_params)
-    render :new if @feed.invalid?
+    render :index if @feed.invalid?
   end
   
   def update
     if @feed.update(feed_params)
-      redirect_to @feed, notice: 'Feed was successfully updated.'
+      redirect_to feeds_path, notice: 'Feed was successfully updated.'
     else
       render :edit
     end
@@ -57,7 +63,7 @@ class FeedsController < ApplicationController
   end
   
   def set_feed
-    @feed = Feed.find_by(id:params[:id])
+    @feed = Feed.find(params[:id])
   end
   
   def check_correct_user
