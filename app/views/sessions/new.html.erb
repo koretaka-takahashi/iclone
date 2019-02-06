@@ -1,3 +1,6 @@
+<h3><%= notice %></h3>
+<h3><%= flash.now[:danger] %></h3>
+
 <h1>LOG IN</h1>
 <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
 

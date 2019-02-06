@@ -21,14 +21,13 @@ class FeedsController < ApplicationController
   # end
   
   def edit
-    #@feed = Feed.find(feed_params)
   end    
   
   def create 
     # @feeds = Feed.all
     @feed = current_user.feeds.build(feed_params)
     if @feed.save
-      redirect_to feeds_path, notice: 'Feed was successfully created.'
+      redirect_to feeds_path, notice: '投稿しました'
     else
       render :index
     end
@@ -42,7 +41,7 @@ class FeedsController < ApplicationController
   
   def update
     if @feed.update(feed_params)
-      redirect_to feeds_path, notice: 'Feed was successfully updated.'
+      redirect_to feeds_path, notice: '<<<投稿を更新しました>>>'
     else
       render :edit
     end
@@ -51,7 +50,7 @@ class FeedsController < ApplicationController
   
   def destroy
     @feed.destroy
-    redirect_to feeds_url, notice: 'Feed was successfully destroyed.'
+    redirect_to feeds_url, notice: '<<<投稿を削除しました>>>'
   end
   
 
@@ -68,7 +67,7 @@ class FeedsController < ApplicationController
   
   def check_correct_user
     if @feed.user_id != current_user.id
-      flash[:notice] = "権限がありません"
+      flash[:notice] = "<<<権限がありません>>>"
       redirect_to("/feeds")
     end
   end

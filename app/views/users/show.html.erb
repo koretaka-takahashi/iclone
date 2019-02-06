@@ -1,5 +1,10 @@
+<h3><%= notice %></h3>
+
+<%= @user.profile_image %>
+
 <h2><%= @user.name %>さんのプロフィールページ</h2>
 
 <h4>メールアドレス <%= @user.email %></h4>
 
-<%= link_to 'トップへ', feeds_path, class: "btn btn-default" %>
+<%= link_to 'プロフィール編集', edit_user_path, class: "btn btn-default" %>
+<%= link_to 'トップへ戻る', feeds_path, class: "btn btn-default" %>

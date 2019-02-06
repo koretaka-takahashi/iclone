@@ -1,6 +1,4 @@
-<h2>ユーザー登録</h2>
-
-<%= form_with(model: @user, local: true) do |f| %>
+<%= form_with(model: @user, local: true, url: choose_new_or_edit) do |f| %>
   <%= f.label :お名前 %>
   <%= f.text_field :name %>
 
@@ -15,5 +13,3 @@
 
   <%= f.submit "CREATE MY ACCOUNT" %>
 <% end %>
-
-<%= link_to 'TOPへ戻る', feeds_path, class: "btn btn-default" %>
