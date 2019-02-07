@@ -9,7 +9,10 @@
   <%= f.password_field :password %>
 
   <%= f.label :パスワード確認用 %>
-  <%= f.password_field :password_confirmation %>
+  <%= f.password_field :password_confirmation %><br>
+  
+  <%= f.label :プロフィール写真 %>
+  <%= f.file_field :profile_image %>
 
-  <%= f.submit "CREATE MY ACCOUNT" %>
+  <%= f.submit "送信" %>
 <% end %>

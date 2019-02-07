@@ -1,6 +1,6 @@
 <p>投稿者：<%= @feed.user.name %></p>
 <p><%= @feed.text %></p>
-<%= image_tag @feed.image.url %>
+<%= image_tag @feed.image %>
 
 <% if logged_in? && current_user.id == @feed.user_id %>
   <%= link_to '編集', edit_feed_path, class: 'btn btn-default' %>
