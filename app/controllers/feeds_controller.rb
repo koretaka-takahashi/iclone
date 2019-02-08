@@ -14,6 +14,7 @@ class FeedsController < ApplicationController
   end
   
   def show
+    @favorite = current_user.favorites.find_by(feed_id: @feed.id)
   end
   
   # def new
@@ -24,10 +25,10 @@ class FeedsController < ApplicationController
   end    
   
   def create 
-    # @feeds = Feed.all
     @feed = current_user.feeds.build(feed_params)
     if @feed.save
-      redirect_to feeds_path, notice: '投稿しました'
+      FeedMailer.feed_mail(@feed).deliver
+      redirect_to feeds_path, notice: '<<<投稿しました>>>'
     else
       render :index
     end
