@@ -10,7 +10,7 @@ class FeedsController < ApplicationController
     else
       @feed = Feed.new
     end  
-    @feeds = Feed.all  
+    @feeds = Feed.all.order(:created_at)
   end
   
   def show
