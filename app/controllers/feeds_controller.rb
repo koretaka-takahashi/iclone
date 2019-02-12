@@ -14,7 +14,7 @@ class FeedsController < ApplicationController
   end
   
   def show
-    @favorite = current_user.favorites.find_by(feed_id: @feed.id)
+    @favorite = current_user.favorites.find_by(feed_id: @feed.id) if logged_in?
   end
   
   # def new
@@ -72,5 +72,4 @@ class FeedsController < ApplicationController
       redirect_to("/feeds")
     end
   end
-
 end

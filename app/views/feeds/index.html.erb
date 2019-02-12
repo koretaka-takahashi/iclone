@@ -3,7 +3,7 @@
   <%= render 'form' %>
 <% end %>
 
-<h1>Feeds一覧</h1>
+<h1>Feed一覧</h1>
 <% @feeds.each do |feed| %>    
-  <span class="image"><%= link_to image_tag(feed.image.url), feed_path(feed.id) %></span>
+  <span class="image"><%= link_to image_tag(feed.image), feed_path(feed.id) %></span>
 <% end %>

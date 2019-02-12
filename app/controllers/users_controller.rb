@@ -19,6 +19,9 @@ class UsersController < ApplicationController
   end
   
   def edit
+    if logged_in? && current_user.id != @user.id
+      redirect_to user_path(@user.id), alert: '<<<権限がありません>>>'
+    end
   end
   
   def update
@@ -38,6 +41,5 @@ class UsersController < ApplicationController
   def set_user
     @user = User.find(params[:id])
   end    
-  
   
 end
