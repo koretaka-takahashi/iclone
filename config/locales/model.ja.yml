@@ -1,0 +1,17 @@
+ja:
+  activerecord:
+    models:
+      feed: "Feed"
+      user: "ユーザー"
+      favorite: "お気に入り"
+      
+    attributes:
+      feed:
+        image: "画像"
+        text: "コメント"
+      user:
+        name: "名前"
+        email: "メールアドレス"
+        password: "パスワード"
+        password_confirmation: "確認用パスワード"
+　　　　　profile_image: "プロフィール写真"
