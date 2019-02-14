@@ -1,9 +1,15 @@
 <h3><%= notice %></h3>
-<% if logged_in? %>
-  <%= render 'form' %>
-<% end %>
 
-<h1>Feed一覧</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-5 col-md-2 col-md-offset-5">
+      <% if logged_in? %>
+        <%= render 'form' %>
+      <% end %>
+    </div>
+  </div>  
+</div>
+  
 <% @feeds.each do |feed| %>    
   <span class="image"><%= link_to image_tag(feed.image), feed_path(feed.id) %></span>
 <% end %>

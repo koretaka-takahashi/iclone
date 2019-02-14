@@ -16,6 +16,34 @@
  *= require_self
  */
  
+.background {
+  background-color: #0f0f0f;
+  color: #ccd8e0;
+}
+ 
+.main-contents {
+  width: 90%;
+  margin: 0 auto;
+} 
+
+.title {
+  width: 170px;
+  margin: 0 auto;
+}
+
+ 
 .alert {
   color: red;
+}
+
+header {
+  background-color: #38393d;    
+}
+
+.app_name {
+  color: #0295f2;     
+}
+
+ul {
+  list-style: none;    
 }

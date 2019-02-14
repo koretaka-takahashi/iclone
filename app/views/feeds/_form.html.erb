@@ -1,3 +1,4 @@
+<div>
 <%= form_with(model: @feed, local: true, url: choose_index_or_edit ) do |form| %>
   <% if @feed.errors.any? %>
     <div id="error_explanation">
@@ -19,3 +20,4 @@
     <%= form.submit %>
   </div>
 <% end %>  
+</div>
