@@ -11,24 +11,21 @@
 
   <body class="background">
     <header>
-      <h1 class="col-md-3 app_name">iclone</h1>
-      <nav>
-        <ul>
+      <nav class="header-nav">
+        <h1><%= link_to "iclone", root_path %></h1>
+        <ul class="header-ul">
           <% if logged_in? %>
-          <li><%= link_to "プロフィール", user_path(current_user.id), class: "btn btn-primary" %></li>
-          <li><%= link_to "ログアウト", session_path(current_user.id), method: :delete, class: "btn btn-primary" %></li>
+            <li><%= link_to "プロフィール", user_path(current_user.id) %></li>
+            <li><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></li>
           <% else %>
-          <li><%= link_to "登録", new_user_path, class: "btn btn-primary" %></li>
-          <li><%= link_to "ログイン", new_session_path, class: "btn btn-primary" %></li>
+            <li><%= link_to "登録", new_user_path %></li>
+            <li><%= link_to "ログイン", new_session_path %></li>
           <% end %>
-          <li><%= link_to 'トップページ', root_path, class: "btn btn-primary" %></li>
         </ul>
-      </nav>
+      </nav>      
     </header>
     
-    <div class="main-contents">
     <%= yield %>
-    </div>
     
   </body>
 </html>

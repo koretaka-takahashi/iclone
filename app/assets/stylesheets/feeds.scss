@@ -6,32 +6,18 @@
   margin: 20px;
 }
 
+// 登録するボタンの登録という文字
 .actions {
   color: #1f2528;
 }
 
+//選択されていませんという文字
 .field {
   color: #ccd8e0;
   /*text-align: center;*/
 }
 
+//フォームに入力される文字
 .field textarea {
   color: #101b33;
-}
-
-
-.form {
-  width: 140px;
-}
-
-
-
-
-.form input {
-  // width: 220px;
-  // margin: 0 auto;
-}
-
-.actions input {
-  // text-align: center;
 }
