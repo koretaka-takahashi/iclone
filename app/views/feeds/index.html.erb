@@ -11,9 +11,11 @@
   </div>  
 </div>
 </div>
-  
-<div class="index">
-<% @feeds.each do |feed| %>    
-  <span class="image"><%= link_to image_tag(feed.image), feed_path(feed.id) %></span>
-<% end %>
+
+<div>
+  <div class="index">
+    <% @feeds.each do |feed| %> 
+      <span class="image"><%= link_to image_tag(feed.image), feed_path(feed.id) %></span>
+    <% end %>
+  </div>
 </div>

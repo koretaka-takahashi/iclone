@@ -2,9 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .image img {
-  width: 200px;
-  margin: 20px;
+  width: 220px;
+  height: 220px;
+  margin: 12px 10px;
+  object-fit: cover;
 }
+
+.index {
+  width: 90%;
+  margin: 0 auto;
+} 
+
 
 // 登録するボタンの登録という文字
 .actions {

@@ -10,10 +10,10 @@
   </head>
 
   <body class="background">
-    <header>
-      <nav class="header-nav">
-        <h1><%= link_to "iclone", root_path %></h1>
-        <ul class="header-ul">
+    <header class="container-fluid">
+      <nav class="row header-nav">
+        <h1 id="app-name" class="col-xs-3 " ><%= link_to "iclone", root_path %></h1>
+        <ul class="col-md-2 col-md-offset-7 header-ul">
           <% if logged_in? %>
             <li><%= link_to "プロフィール", user_path(current_user.id) %></li>
             <li><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></li>

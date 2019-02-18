@@ -21,17 +21,6 @@
   color: #ccd8e0;
 }
  
-.index {
-  width: 90%;
-  margin: 0 auto;
-} 
-
-.title {
-  width: 170px;
-  margin: 0 auto;
-}
-
- 
 .alert {
   color: red;
 }
@@ -39,6 +28,8 @@
 header {
   background-color: #38393d;
   display: flex;
+  margin-top: 5px;
+  border-radius: 10px;
 }
 
 .app_name {
@@ -79,11 +70,23 @@ h1 a:hover {
 
 .header-nav {
   width: 100%;
-  height: 100px;
-  display: flex;
-  justify-content: space-between;
+  height: 120px;
+  /*display: flex;*/
+  /*justify-content: space-between;*/
 }
 
 .header-ul {
-  padding-right: 20px;
+  margin-top: 20px;
+}
+
+.header-ul li {
+  text-align: right;
+  margin: 12px 0px;
+}
+
+#app-name {
+  line-height: 60px;
+  text-align: center;
+  font-size: 45px;
+  font-family: Comic Sans MS;
 }
