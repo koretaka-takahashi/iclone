@@ -5,8 +5,9 @@
 
 <h2><%= @user.name %>さんのプロフィールページ</h2>
 
-
+<% if current_user.id == @user.id %>
 <h4>メールアドレス <%= @user.email %></h4>
+<% end %>
 
 <% if logged_in? && current_user.id == @user.id %>
 <%= link_to 'プロフィール編集', edit_user_path, class: "btn btn-default" %>
