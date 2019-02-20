@@ -1,19 +1,24 @@
 <h3><%= notice %></h3>
 <h3 class="alert"><%= alert %></h3>
 
-<span class="profile_image"><%= image_tag @user.profile_image %></span>
+<div class="profile">
+  <span><%= image_tag @user.profile_image %></span>
+  
+  <% if logged_in? && current_user.id == @user.id %>
+    <%= link_to 'プロフィール編集', edit_user_path, class: "btn btn-default" %>
+  <% end %>  
 
-<h2><%= @user.name %>さんのプロフィールページ</h2>
+  <h2><%= @user.name %>さんのプロフィールページ</h2>
 
-<% if current_user.id == @user.id %>
-<h4>メールアドレス <%= @user.email %></h4>
-<% end %>
+  <% if logged_in? && current_user.id == @user.id %>
+    <h4 class="email">メールアドレス <%= @user.email %></h4>
+  <% end %>
+  
+  <h3><%= @user.name %>さんのfeed</h3>
+</div>
 
-<% if logged_in? && current_user.id == @user.id %>
-<%= link_to 'プロフィール編集', edit_user_path, class: "btn btn-default" %>
-<% end %>
-
-<h3><%= @user.name %>さんのfeed</h3>
-<% @user.feeds.each do |feed| %>
-  <span class="image"><%= link_to image_tag(feed.image), feed_path(feed.id) %></span>
-<% end %>
+<div class="index">
+  <% @user.feeds.each do |feed| %>
+    <span class="image"><%= link_to image_tag(feed.image), feed_path(feed.id) %></span>
+  <% end %>
+</div>

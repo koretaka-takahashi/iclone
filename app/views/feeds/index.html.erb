@@ -1,20 +1,20 @@
 <h3><%= notice %></h3>
 
-<div class="form">
-<div class="container">
+
+<div class="container form">
   <div class="row">
-    <div class="col-md-offset-5 col-md-2 col-md-offset-5">
+    <div class="col-sm-offset-5 col-sm-2">
       <% if logged_in? %>
         <%= render 'form' %>
       <% end %>
     </div>
   </div>  
 </div>
-</div>
+
 
 <div>
   <div class="index">
-    <% @feeds.each do |feed| %> 
+    <% @feeds.each do |feed|%> 
       <span class="image"><%= link_to image_tag(feed.image), feed_path(feed.id) %></span>
     <% end %>
   </div>
