@@ -2,7 +2,7 @@
 
 <p>投稿者：<%= @feed.user.name %></p>
 <p><%= @feed.text %></p>
-<%= image_tag @feed.image %>
+<%= image_tag @feed.image.url %>
 
 <% if logged_in? %>
   <% unless @feed.user_id == current_user.id %>
