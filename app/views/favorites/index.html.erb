@@ -1,4 +1,5 @@
 <h1>お気に入り一覧</h1>
+
 <% @favorites.each do |f| %>
-<span class="image"><%= link_to image_tag(f.feed.image.url), feed_path(f.feed.id) %></span>
+  <span class="image"><%= link_to image_tag(f.feed.image.url), feed_path(f.feed.id) %></span>
 <% end %>

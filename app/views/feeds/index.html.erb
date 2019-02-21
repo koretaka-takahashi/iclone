@@ -12,7 +12,7 @@
 </div>
 
 
-<div>
+<div class="index-parent">
   <div class="index">
     <% @feeds.each do |feed| %> 
       <span class="image"><%= link_to image_tag(feed.image.url), feed_path(feed.id) %></span>

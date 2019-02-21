@@ -2,7 +2,7 @@
 <h3 class="alert"><%= alert %></h3>
 
 <div class="profile">
-  <span><%= image_tag @user.profile_image.url %></span>
+  <span><%= image_tag @user.profile_image.url if @user.profile_image.url %></span>
   
   <% if logged_in? && current_user.id == @user.id %>
     <%= link_to 'プロフィール編集', edit_user_path, class: "btn btn-default" %>
@@ -11,6 +11,7 @@
   <h2><%= @user.name %>さんのプロフィールページ</h2>
 
   <% if logged_in? && current_user.id == @user.id %>
+    <h2><%= link_to 'お気に入りへ', favorites_path, class: "btn btn-default" %></h2>
     <h4 class="email">メールアドレス <%= @user.email %></h4>
   <% end %>
   

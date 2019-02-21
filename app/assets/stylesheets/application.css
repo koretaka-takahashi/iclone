@@ -29,12 +29,10 @@ body {
   background-color: #0f0f0f;
   color: #ccd8e0;
 }
- 
 
 .index {
-  width: 90%;
+  width: 92%;
   margin: 0 auto;
-  padding-bottom: 170px;
 } 
  
  
@@ -169,7 +167,9 @@ button, input, optgroup, select, textarea {
   width: 100%;
 }
 
-
+.contents {
+  padding: 30px 30px 170px 30px;
+}
 
 
 
