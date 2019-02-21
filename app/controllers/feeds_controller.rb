@@ -17,10 +17,6 @@ class FeedsController < ApplicationController
     @favorite = current_user.favorites.find_by(feed_id: @feed.id) if logged_in?
   end
   
-  # def new
-  #   @feed = Feed.new  
-  # end
-  
   def edit
   end    
   
@@ -53,9 +49,7 @@ class FeedsController < ApplicationController
     @feed.destroy
     redirect_to feeds_url, notice: '<<<投稿を削除しました>>>'
   end
-  
 
-  
   private
   
   def feed_params

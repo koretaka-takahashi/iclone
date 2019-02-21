@@ -1,7 +1,7 @@
 <h1><%= @feed.user.name %>さん</h1>
 
-<h1>下記の内容でfeedの投稿が完了しました！</h1>
+<h1>下記の内容で投稿が完了しました！</h1>
 
 <p><%= @feed.text %></p>
 
-<p><%= image_tag @feed.image %></p>
+<p><%= image_tag @feed.image.url %></p>

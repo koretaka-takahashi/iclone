@@ -3,11 +3,11 @@
 <%= form_with(model: @feed, local: true) do |form| %>
   <%= form.hidden_field :image_cache %>
   <%= form.hidden_field :text %>
-
   <p>投稿画像:<%= image_tag (@feed.image.url) %></p>
   <p>コメント:<%= @feed.text %></p>
   <%= form.submit "投稿する" %>
 <% end %>
+
 <%= form_with(model: @feed, local: true, method: :get) do |form| %>
   <%= form.hidden_field :image_cache %>
   <%= form.hidden_field :text %>

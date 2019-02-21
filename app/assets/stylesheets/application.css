@@ -34,8 +34,7 @@ body {
   width: 92%;
   margin: 0 auto;
 } 
- 
- 
+
 .alert {
   color: red;
 }
@@ -130,7 +129,6 @@ button, input, optgroup, select, textarea {
 }
 
 .container-fluid {
-  /*width: 100%;*/
   margin: 7px 7px 0px 7px;
   right: 0px;
   left: 0px;
@@ -142,10 +140,8 @@ button, input, optgroup, select, textarea {
   border-radius: 10px;
   position: absolute;
   bottom: 10px;
-  /*width: 99%;*/
   margin: 0px 7px 0px 7px;
 }
-
 
 .footer-text {
   line-height: 90px;
@@ -161,8 +157,6 @@ button, input, optgroup, select, textarea {
   padding: 0px;
 }
 
-
-
 .container {
   width: 100%;
 }
@@ -170,17 +164,3 @@ button, input, optgroup, select, textarea {
 .contents {
   padding: 30px 30px 170px 30px;
 }
-
-
-
-/*登録するボタンの登録という文字*/
-/*.actions {*/
-/*  color: #1f2528;*/
-/*}*/
-
-/*選択されていませんという文字*/
-/*.field {*/
-/*  color: #ccd8e0;*/
-  /*text-align: center;*/
-/*}*/
-
