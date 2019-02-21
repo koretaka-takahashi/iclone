@@ -2,7 +2,7 @@
 <h3 class="alert"><%= alert %></h3>
 
 <div class="profile">
-  <span><%= image_tag @user.profile_image %></span>
+  <span><%= image_tag @user.profile_image.url %></span>
   
   <% if logged_in? && current_user.id == @user.id %>
     <%= link_to 'プロフィール編集', edit_user_path, class: "btn btn-default" %>
@@ -19,6 +19,6 @@
 
 <div class="index">
   <% @user.feeds.each do |feed| %>
-    <span class="image"><%= link_to image_tag(feed.image), feed_path(feed.id) %></span>
+    <span class="image"><%= link_to image_tag(feed.image.url), feed_path(feed.id) %></span>
   <% end %>
 </div>
