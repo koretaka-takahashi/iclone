@@ -11,7 +11,9 @@
   <% end %>
   
   <div class="field">
+    <%= image_tag(@feed.image.url) if @feed.image.url %>
     <%= form.file_field :image, class: "file_field" %>
+    <%= form.hidden_field :image_cache %>
     <%= form.text_area :text %>
   </div>
   

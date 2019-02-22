@@ -5,14 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require 'faker'
-  require 'i18n'
-  I18n.locale = :ja
-  Faker::Config.locale = 'ja'
-  puts Faker::Config.locale
+def generate_random_strings
+  return (0...8).map{ (65 + rand(26)).chr }.join  
+end
+
+gimei = Gimei.name
+
 50.times do |n|
-  name = Faker::Name.name
-  email = Faker::Internet.email
+  name = gimei.kanji
+  email = generate_random_strings + "@" + generate_random_strings + ".com" 
   password = "password"
   user = User.new(
             name: name,
