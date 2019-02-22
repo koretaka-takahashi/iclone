@@ -164,3 +164,7 @@ button, input, optgroup, select, textarea {
 .contents {
   padding: 30px 30px 170px 30px;
 }
+
+.image-back {
+  margin: 30px;
+}

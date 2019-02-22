@@ -10,14 +10,17 @@
     <div>
   <% end %>
   
-  <div class="field">
+  <div class="image-back">
     <%= image_tag(@feed.image.url) if @feed.image.url %>
-    <%= form.file_field :image, class: "file_field" %>
-    <%= form.hidden_field :image_cache %>
-    <%= form.text_area :text %>
   </div>
+    <div class="col-sm-offset-5 col-sm-2">
+      <%= form.file_field :image, class: "file_field" %>
+      <%= form.hidden_field :image_cache %>
+      <%= form.text_area :text %>
+    
   
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+    </div>  
 <% end %>  
