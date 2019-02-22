@@ -1,4 +1,9 @@
 Rails.application.configure do
+  require 'faker'
+  require 'i18n'
+  I18n.locale = :ja
+  Faker::Config.locale = 'ja'
+  puts Faker::Config.locale
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
