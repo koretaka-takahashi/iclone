@@ -23,7 +23,7 @@ class FeedsController < ApplicationController
   def create 
     @feed = current_user.feeds.build(feed_params)
     if @feed.save
-      FeedMailer.feed_mail(@feed).deliver
+      # FeedMailer.feed_mail(@feed).deliver
       redirect_to feeds_path, notice: '<<<投稿しました>>>'
     else
       render :index
